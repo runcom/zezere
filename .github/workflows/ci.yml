@@ -22,7 +22,7 @@ jobs:
         pip install -r requirements-test.txt
     - name: Check typing
       run: |
-        mypy zezere
+        mypy --install-types --non-interactive zezere
     - name: Code style checking
       run: |
         black --check --target-version py36 zezere tests *.py
