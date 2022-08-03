@@ -62,10 +62,10 @@ jobs:
       run: sudo apt-get update
     - name: Install system dependencies
       run: |
-        sudo apt-get install libdevmapper-dev
+        sudo apt-get install libdevmapper-dev libbtrfs-dev
     - name: Install s2i
       run: |
-        go get github.com/openshift/source-to-image/cmd/s2i
+        go install github.com/openshift/source-to-image/cmd/s2i@a364722d1db0ee1aab5e83cdb6631d3a29a635e3
     - name: Build a server container
       run: |
         $HOME/go/bin/s2i build . registry.access.redhat.com/ubi8/python-36 zezere:testimg
